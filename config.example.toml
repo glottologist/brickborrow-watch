@@ -1,0 +1,24 @@
+# Copy to ~/.config/brickborrow-watch/config.toml and fill in.
+
+site_url = "https://www.brickborrow.com"
+# Defaults to $XDG_STATE_HOME/brickborrow-watch/state.json.
+# state_path = "/home/you/.local/state/brickborrow-watch/state.json"
+max_items_per_alert = 25
+
+[ntfy]
+enabled = true
+server = "https://ntfy.sh"
+# Anyone who knows a topic name can read it, so pick an unguessable one.
+topic = "brickborrow-CHANGE-ME-a7f3c9"
+# Only needed for access-controlled topics.
+# token_env = "BRICKBORROW_NTFY_TOKEN"
+
+[email]
+enabled = true
+smtp_host = "smtp.example.com"
+smtp_port = 587
+username = "you@example.com"
+# The password is read from this environment variable, never from this file.
+password_env = "BRICKBORROW_SMTP_PASSWORD"
+from = "Brick Borrow Watch <you@example.com>"
+to = "alerts@example.com"

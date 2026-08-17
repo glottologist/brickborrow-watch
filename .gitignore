@@ -1,0 +1,8 @@
+/target
+/result
+
+# Never commit a live configuration: it carries the ntfy topic, which is the
+# only thing protecting the alert stream.
+/config.toml
+/state.json
+*.env

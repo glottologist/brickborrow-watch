@@ -1,0 +1,23 @@
+[package]
+name = "brickborrow-watch"
+version = "0.1.0"
+edition = "2021"
+description = "Polls the Brick Borrow catalogue and alerts when sets become available"
+license = "MIT"
+
+[dependencies]
+anyhow = "1"
+lettre = { version = "0.11", default-features = false, features = [
+  "smtp-transport",
+  "rustls-tls",
+  "rustls-native-certs",
+  "builder",
+] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+time = { version = "0.3", features = ["formatting", "macros"] }
+toml = "0.8"
+ureq = { version = "2.12", features = ["json"] }
+
+[profile.release]
+strip = true
